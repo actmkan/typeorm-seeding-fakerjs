@@ -1,10 +1,12 @@
 import { Connection, ObjectType } from 'typeorm'
-import { Faker as FakerType } from '@faker-js/faker/dist/types/faker';
+import { Faker as FakerType } from '@faker-js/faker';
 
 import { EntityFactory } from './entity-factory'
 
 
 export type Faker = FakerType;
+
+
 /**
  * FactoryFunction is the fucntion, which generate a new filled entity
  */
