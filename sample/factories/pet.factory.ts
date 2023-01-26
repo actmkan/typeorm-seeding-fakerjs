@@ -1,9 +1,9 @@
-import Faker from 'faker'
 import { define, factory } from '../../src/typeorm-seeding'
 import { Pet } from '../entities/Pet.entity'
 import { User } from '../entities/User.entity'
+import {Faker} from "../../src/types";
 
-define(Pet, (faker: typeof Faker) => {
+define(Pet, (faker: Faker) => {
   const gender = faker.datatype.number(1)
   const name = faker.name.firstName(gender)
 

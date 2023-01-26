@@ -1,9 +1,9 @@
-import * as Faker from 'faker'
 import { ObjectType, SaveOptions } from 'typeorm'
 import { FactoryFunction, EntityProperty } from './types'
 import { isPromiseLike } from './utils/factory.util'
 import { printError, printWarning } from './utils/log.util'
 import { getConnectionOptions, createConnection } from './connection'
+import faker from '@faker-js/faker'
 
 export class EntityFactory<Entity, Context> {
   private mapFunction: (entity: Entity) => Promise<Entity>
@@ -97,7 +97,7 @@ export class EntityFactory<Entity, Context> {
       throw new Error('Could not found entity')
     }
 
-    let entity = await this.resolveEntity(this.factory(Faker, this.context), isSeeding)
+    let entity = await this.resolveEntity(this.factory(faker, this.context), isSeeding)
     if (this.mapFunction) {
       entity = await this.mapFunction(entity)
     }

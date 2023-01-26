@@ -246,7 +246,7 @@ define: <Entity, Context>(entity: Entity, factoryFn: FactoryFunction<Entity, Con
 ```
 
 ```typescript
-import Faker from 'faker'
+import { Faker } from '../../src/types'
 import { define } from 'typeorm-seeding'
 import { User } from '../entities'
 

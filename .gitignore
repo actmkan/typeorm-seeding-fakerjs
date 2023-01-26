@@ -25,3 +25,7 @@ node_modules/
 ### templates ###
 tmp
 old
+.idea
+
+yarn.lock
+package-lock.json

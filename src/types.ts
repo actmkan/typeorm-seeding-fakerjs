@@ -1,12 +1,14 @@
-import * as Faker from 'faker'
 import { Connection, ObjectType } from 'typeorm'
+import { Faker as FakerType } from '@faker-js/faker/dist/types/faker';
 
 import { EntityFactory } from './entity-factory'
 
+
+export type Faker = FakerType;
 /**
  * FactoryFunction is the fucntion, which generate a new filled entity
  */
-export type FactoryFunction<Entity, Context> = (faker: typeof Faker, context?: Context) => Entity
+export type FactoryFunction<Entity, Context> = (faker: Faker, context?: Context) => Entity
 
 /**
  * EntityProperty defines an object whose keys and values must be properties of the given Entity.
